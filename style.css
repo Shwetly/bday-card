@@ -7,12 +7,12 @@ body {
     align-items: center;
     height: 100vh;
     background-image: url('v1064-36.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     opacity: 0.8;
     margin: 0;
     overflow: hidden;
     position: relative;
-    
 }
 
 .card {
@@ -27,9 +27,48 @@ body {
     height: 400px;
     position: relative;
     z-index: 2;
-    /* animation: float 6s ease-in-out infinite; */
 }
 
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: auto;
+    }
+    .card .hpy {
+        font-size: 48px;
+    }
+    .card p {
+        font-size: 24px;
+    }
+    .card img {
+        width: 80px;
+    }
+    #surpriseBtn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+    .card .hpy {
+        font-size: 36px;
+    }
+    .card p {
+        font-size: 18px;
+    }
+    .card img {
+        width: 60px;
+    }
+    #surpriseBtn {
+        padding: 6px 12px;
+    }
+}
 @keyframes float {
     0% {
         transform: translateY(0px);
@@ -39,6 +78,31 @@ body {
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(30px); 
+        opacity: 0;
+    }
+}
+.balloon {
+    width: 60px;
+    height: 120px;
+}
+
+@media (max-width: 480px) {
+    .balloon {
+        width: 40px;
+        height: 80px;
     }
 }
 
@@ -65,19 +129,6 @@ body {
     background-image: url('balloon.png'); /* Add a heart image */
 }
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) translateX(30px); 
-        opacity: 0;
-    }
-}
 
 
 .balloon1 { left: 10%; animation-duration: 12s; animation-delay: 0s; }
