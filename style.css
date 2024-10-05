@@ -98,12 +98,12 @@ body {
 
 .balloon {
     position: absolute;
-    bottom: -100px; /* Start below the viewport */
+    bottom: -150px; /* Start just below the viewport */
     width: 80px;
     height: 150px;
     background-size: contain;
     background-repeat: no-repeat;
-    animation: floatUp 10s infinite;
+    animation: floatUp 10s infinite linear;
 }
 
 .balloon {
@@ -112,15 +112,10 @@ body {
 
 @keyframes floatUp {
     0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
+        transform: translateY(100vh) translateX(0); /* Offscreen below the viewport */
     }
     100% {
-        transform: translateY(-100vh) translateX(30px);
-        opacity: 0;
+        transform: translateY(-120vh) translateX(30px); /* Move completely out of the screen */
     }
 }
 
